@@ -36,7 +36,9 @@ get_header();
                 ) );
                 if ( $features->have_posts() ) :
                     while ( $features->have_posts() ) : $features->the_post();
-                        $thumbnail_url = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : get_template_directory_uri() . '/assets/icon1.png';
+                        $default_img = get_post_meta( get_the_ID(), '_default_image', true );
+                        $fallback = $default_img ? $default_img : 'assets/icon1.png';
+                        $thumbnail_url = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : get_template_directory_uri() . '/' . $fallback;
                 ?>
                 <div class="feature-item">
                     <div class="feature-icon">
@@ -78,7 +80,9 @@ get_header();
                 ) );
                 if ( $services->have_posts() ) :
                     while ( $services->have_posts() ) : $services->the_post();
-                        $thumbnail_url = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : get_template_directory_uri() . '/assets/service1.png';
+                        $default_img = get_post_meta( get_the_ID(), '_default_image', true );
+                        $fallback = $default_img ? $default_img : 'assets/service1.png';
+                        $thumbnail_url = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : get_template_directory_uri() . '/' . $fallback;
                 ?>
                 <div class="service-card">
                     <div class="service-img">
