@@ -481,6 +481,46 @@ function hajzatik_enqueue_admin_fonts() {
 }
 add_action( 'admin_enqueue_scripts', 'hajzatik_enqueue_admin_fonts' );
 
+/**
+ * Add Custom Role "العميل" (Client)
+ */
+function hajzatik_add_client_role() {
+    if ( ! get_role( 'client' ) ) {
+        $editor = get_role( 'editor' );
+        if ( $editor ) {
+            $caps = $editor->capabilities;
+            // Add user management capabilities for the client
+            $caps['list_users'] = true;
+            $caps['create_users'] = true;
+            $caps['edit_users'] = true;
+            $caps['delete_users'] = true;
+            $caps['promote_users'] = true;
+            
+            add_role( 'client', 'العميل', $caps );
+        }
+    }
+}
+add_action( 'init', 'hajzatik_add_client_role' );
+
+/**
+ * Restrict Admin Menu for "العميل" Role
+ */
+function hajzatik_client_admin_menu() {
+    $current_user = wp_get_current_user();
+    if ( in_array( 'client', (array) $current_user->roles ) ) {
+        // Remove Tools
+        remove_menu_page( 'tools.php' );
+        // Ensure standard restricted menus are removed (just in case)
+        remove_menu_page( 'themes.php' );
+        remove_menu_page( 'plugins.php' );
+        remove_menu_page( 'options-general.php' );
+        
+        // Remove ACF or other plugin menus if they exist, to ensure "ONLY" requested items appear
+        remove_menu_page( 'edit.php?post_type=acf-field-group' ); 
+    }
+}
+add_action( 'admin_menu', 'hajzatik_client_admin_menu', 999 );
+
 function hajzatik_custom_admin_css() {
     echo '<style>
         /* Apply Cairo Font Everywhere in Admin */
