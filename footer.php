@@ -27,15 +27,15 @@
                     <ul class="footer-contact-info">
                         <li>
                             <i class="fa-brands fa-whatsapp"></i>
-                            <span dir="ltr"><?php echo esc_html( get_theme_mod( 'header_phone', '+974 123 456 789' ) ); ?></span>
+                            <span dir="ltr"><?php echo esc_html( get_theme_mod( 'hajzatik_phone_number', '+974 123 456 789' ) ); ?></span>
                         </li>
                         <li>
                             <i class="fa-solid fa-phone"></i>
-                            <span dir="ltr"><?php echo esc_html( get_theme_mod( 'header_phone', '+974 123 456 789' ) ); ?></span>
+                            <span dir="ltr"><?php echo esc_html( get_theme_mod( 'hajzatik_phone_number', '+974 123 456 789' ) ); ?></span>
                         </li>
                         <li>
                             <i class="fa-regular fa-envelope"></i>
-                            <span>example@hotmail.com</span>
+                            <span><?php echo esc_html( get_theme_mod( 'hajzatik_email', 'example@hotmail.com' ) ); ?></span>
                         </li>
                     </ul>
                 </div>
@@ -44,17 +44,27 @@
                 <div class="footer-col social-col">
                     <h4 class="footer-title">تابعنا على وسائل التواصل</h4>
                     <div class="social-links">
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <?php if ( get_theme_mod('hajzatik_facebook') && get_theme_mod('hajzatik_facebook') !== '#' ) : ?>
+                            <a href="<?php echo esc_url( get_theme_mod('hajzatik_facebook') ); ?>"><i class="fa-brands fa-facebook-f"></i></a>
+                        <?php endif; ?>
+                        <?php if ( get_theme_mod('hajzatik_twitter') && get_theme_mod('hajzatik_twitter') !== '#' ) : ?>
+                            <a href="<?php echo esc_url( get_theme_mod('hajzatik_twitter') ); ?>"><i class="fa-brands fa-twitter"></i></a>
+                        <?php endif; ?>
+                        <?php if ( get_theme_mod('hajzatik_instagram') && get_theme_mod('hajzatik_instagram') !== '#' ) : ?>
+                            <a href="<?php echo esc_url( get_theme_mod('hajzatik_instagram') ); ?>"><i class="fa-brands fa-instagram"></i></a>
+                        <?php endif; ?>
+                        <?php if ( get_theme_mod('hajzatik_linkedin') && get_theme_mod('hajzatik_linkedin') !== '#' ) : ?>
+                            <a href="<?php echo esc_url( get_theme_mod('hajzatik_linkedin') ); ?>"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <p>&copy; جميع الحقوق المحفوظة <?php echo date('Y'); ?></p>
-                <p>الرقم الضريبي : 123456789</p>
+                <?php if ( get_theme_mod('hajzatik_tax_number') ) : ?>
+                    <p>الرقم الضريبي : <?php echo esc_html( get_theme_mod('hajzatik_tax_number') ); ?></p>
+                <?php endif; ?>
             </div>
         </div>
     </footer>

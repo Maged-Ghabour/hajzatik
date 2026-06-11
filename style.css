@@ -1415,3 +1415,92 @@ body.dark-mode .features-box {
 body.dark-mode .faq-answer {
     background-color: #1e1e1e;
 }
+
+/* 
+  =========================================
+  Comments Section
+  =========================================
+*/
+.comment-list li {
+    margin-bottom: 30px;
+}
+.comment-body {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: var(--border-radius-sm);
+    position: relative;
+}
+.comment-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+.comment-author img {
+    border-radius: 50%;
+}
+.comment-author b {
+    font-size: 16px;
+    color: var(--text-dark);
+}
+.comment-metadata a {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+.comment-content p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+.reply {
+    margin-top: 15px;
+}
+.comment-reply-link {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+body.dark-mode .comment-body {
+    background-color: #1e1e1e;
+}
+body.dark-mode .comment-author b {
+    color: #f1f1f1;
+}
+body.dark-mode .btn-whatsapp {
+    background-color: #25D366;
+    color: #ffffff;
+}
+body.dark-mode .btn-whatsapp i {
+    color: #ffffff;
+}
+body.dark-mode .btn-whatsapp:hover {
+    background-color: #1ebd5a;
+    color: #ffffff;
+}
+
+/* Background overrides for light sections in Dark Mode */
+body.dark-mode .faq,
+body.dark-mode .how-it-works,
+body.dark-mode .contact,
+body.dark-mode .footer {
+    background-color: #1a1a1a;
+}
+body.dark-mode .services {
+    background-color: #121212;
+}
+body.dark-mode .header {
+    background-color: transparent;
+}
+body.dark-mode .header.scrolled {
+    background-color: #1a1a1a;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+/* Dark Mode Logo Toggling */
+body.dark-mode .has-dark-logo .logo-light {
+    display: none !important;
+}
+body.dark-mode .has-dark-logo .logo-dark {
+    display: block !important;
+}

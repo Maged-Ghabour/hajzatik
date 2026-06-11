@@ -25,8 +25,15 @@
             </button>
 
             <!-- Logo -->
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.png" alt="<?php bloginfo('name'); ?>">
+            <?php 
+            $dark_logo = get_theme_mod('hajzatik_dark_logo');
+            $logo_class = $dark_logo ? 'logo has-dark-logo' : 'logo';
+            ?>
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="<?php echo esc_attr($logo_class); ?>">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.png" alt="<?php bloginfo('name'); ?>" class="logo-light">
+                <?php if ( $dark_logo ) : ?>
+                    <img src="<?php echo esc_url($dark_logo); ?>" alt="<?php bloginfo('name'); ?>" class="logo-dark" style="display: none;">
+                <?php endif; ?>
             </a>
 
             <!-- Navigation -->
@@ -50,7 +57,7 @@
                 <?php endif; ?>
                 
                 <div class="phone-number">
-                    <span dir="ltr"><?php echo esc_html( get_theme_mod( 'header_phone', '+974 123 456 789' ) ); ?></span>
+                    <span dir="ltr"><?php echo esc_html( get_theme_mod( 'hajzatik_phone_number', '+974 123 456 789' ) ); ?></span>
                     <i class="fa-solid fa-phone"></i>
                 </div>
                 <a href="<?php echo esc_url( get_theme_mod( 'whatsapp_link', '#' ) ); ?>" class="btn btn-dark">تواصل معنا</a>

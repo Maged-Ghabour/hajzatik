@@ -108,15 +108,19 @@ get_header();
     <!-- CTA Banner Section -->
     <section class="cta-banner">
         <div class="container">
-            <div class="cta-content">
+            <?php
+            $cta_bg = get_theme_mod( 'cta_bg_image' );
+            $bg_style = $cta_bg ? 'background-image: url(' . esc_url($cta_bg) . ');' : '';
+            ?>
+            <div class="cta-content" style="<?php echo $bg_style; ?>">
                 <div class="cta-overlay"></div>
                 <div class="cta-text-box">
-                    <h2 class="cta-title"><?php echo esc_html( get_theme_mod( 'cta_title', 'نوفر لك الوصول السريع إلى أهم المواعيد والحجوزات' ) ); ?></h2>
+                    <h2 class="cta-title"><?php echo esc_html( get_theme_mod( 'cta_title', 'نوفر لك الوصول السريع إلى أهم المواعيد' ) ); ?></h2>
                     <p class="cta-description">
-                        من المواعيد الطبية والحكومية إلى الفعاليات والمطاعم وتذاكر السفر، نساعدك في الحصول على الحجز الذي تحتاجه بأسرع وقت
+                        <?php echo nl2br( esc_html( get_theme_mod( 'cta_desc', 'من المواعيد الطبية والحكومية إلى الفعاليات والمطاعم وتذاكر السفر، نساعدك في الحصول على الحجز الذي تحتاجه بأسرع وقت' ) ) ); ?>
                     </p>
-                    <a href="<?php echo esc_url( get_theme_mod( 'whatsapp_link', '#' ) ); ?>" class="btn btn-white btn-whatsapp cta-btn">
-                        احجز عبر واتساب
+                    <a href="<?php echo esc_url( get_theme_mod( 'cta_btn_link', '#' ) ); ?>" class="btn btn-white btn-whatsapp cta-btn">
+                        <?php echo esc_html( get_theme_mod( 'cta_btn_text', 'احجز عبر واتساب' ) ); ?>
                         <i class="fa-brands fa-whatsapp"></i>
                     </a>
                 </div>

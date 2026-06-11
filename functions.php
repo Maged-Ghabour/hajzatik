@@ -283,6 +283,112 @@ function hajzatik_customize_register( $wp_customize ) {
 		'type' => 'checkbox',
 	) );
 
+    // 3. Dark Mode
+    $wp_customize->add_section( 'hajzatik_dark_mode_section', array(
+        'title'       => __( 'الوضع الليلي', 'hajzatik' ),
+        'priority'    => 32,
+    ) );
+    $wp_customize->add_setting( 'hajzatik_enable_dark_mode', array(
+        'default'           => true,
+        'sanitize_callback' => 'absint',
+    ) );
+    $wp_customize->add_control( 'hajzatik_enable_dark_mode', array(
+        'label'    => __( 'تفعيل زر الوضع الليلي في الهيدر', 'hajzatik' ),
+        'section'  => 'hajzatik_dark_mode_section',
+        'type'     => 'checkbox',
+    ) );
+    
+    // Dark Mode Logo
+    $wp_customize->add_setting( 'hajzatik_dark_logo' );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'hajzatik_dark_logo', array(
+        'label'    => __( 'لوجو مخصص للوضع الليلي (أبيض)', 'hajzatik' ),
+        'section'  => 'hajzatik_dark_mode_section',
+        'settings' => 'hajzatik_dark_logo',
+    ) ) );
+
+    // 4. Contact Information & Social Media
+    $wp_customize->add_section( 'hajzatik_contact_section', array(
+        'title'       => __( 'بيانات التواصل والسوشيال ميديا', 'hajzatik' ),
+        'priority'    => 33,
+    ) );
+
+    // Phone Number
+    $wp_customize->add_setting( 'hajzatik_phone_number', array(
+        'default'           => '+974 123 456 789',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'hajzatik_phone_number', array(
+        'label'    => __( 'رقم الجوال (للهيدر والفوتر)', 'hajzatik' ),
+        'section'  => 'hajzatik_contact_section',
+        'type'     => 'text',
+    ) );
+
+    // Email
+    $wp_customize->add_setting( 'hajzatik_email', array(
+        'default'           => 'example@hotmail.com',
+        'sanitize_callback' => 'sanitize_email',
+    ) );
+    $wp_customize->add_control( 'hajzatik_email', array(
+        'label'    => __( 'البريد الإلكتروني', 'hajzatik' ),
+        'section'  => 'hajzatik_contact_section',
+        'type'     => 'email',
+    ) );
+
+    // Facebook
+    $wp_customize->add_setting( 'hajzatik_facebook', array(
+        'default'           => '#',
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
+    $wp_customize->add_control( 'hajzatik_facebook', array(
+        'label'    => __( 'رابط فيسبوك', 'hajzatik' ),
+        'section'  => 'hajzatik_contact_section',
+        'type'     => 'url',
+    ) );
+
+    // Twitter
+    $wp_customize->add_setting( 'hajzatik_twitter', array(
+        'default'           => '#',
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
+    $wp_customize->add_control( 'hajzatik_twitter', array(
+        'label'    => __( 'رابط تويتر / X', 'hajzatik' ),
+        'section'  => 'hajzatik_contact_section',
+        'type'     => 'url',
+    ) );
+
+    // Instagram
+    $wp_customize->add_setting( 'hajzatik_instagram', array(
+        'default'           => '#',
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
+    $wp_customize->add_control( 'hajzatik_instagram', array(
+        'label'    => __( 'رابط انستجرام', 'hajzatik' ),
+        'section'  => 'hajzatik_contact_section',
+        'type'     => 'url',
+    ) );
+
+    // LinkedIn
+    $wp_customize->add_setting( 'hajzatik_linkedin', array(
+        'default'           => '#',
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
+    $wp_customize->add_control( 'hajzatik_linkedin', array(
+        'label'    => __( 'رابط لينكد إن', 'hajzatik' ),
+        'section'  => 'hajzatik_contact_section',
+        'type'     => 'url',
+    ) );
+
+    // Tax Number
+    $wp_customize->add_setting( 'hajzatik_tax_number', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'hajzatik_tax_number', array(
+        'label'    => __( 'الرقم الضريبي (سيظهر في الفوتر إذا تم كتابته)', 'hajzatik' ),
+        'section'  => 'hajzatik_contact_section',
+        'type'     => 'text',
+    ) );
+
 	// Hero Section
 	$wp_customize->add_section( 'hajzatik_hero_section', array(
 		'title' => 'القسم الرئيسي (Hero)',
@@ -322,6 +428,34 @@ function hajzatik_customize_register( $wp_customize ) {
 		'section' => 'hajzatik_cta_section',
 		'type' => 'textarea',
 	) );
+
+	$wp_customize->add_setting( 'cta_desc', array( 'default' => 'من المواعيد الطبية والحكومية إلى الفعاليات والمطاعم وتذاكر السفر، نساعدك في الحصول على الحجز الذي تحتاجه بأسرع وقت' ) );
+	$wp_customize->add_control( 'cta_desc', array(
+		'label' => 'وصف CTA',
+		'section' => 'hajzatik_cta_section',
+		'type' => 'textarea',
+	) );
+
+	$wp_customize->add_setting( 'cta_btn_text', array( 'default' => 'احجز عبر واتساب' ) );
+	$wp_customize->add_control( 'cta_btn_text', array(
+		'label' => 'نص زر CTA',
+		'section' => 'hajzatik_cta_section',
+		'type' => 'text',
+	) );
+
+	$wp_customize->add_setting( 'cta_btn_link', array( 'default' => '#' ) );
+	$wp_customize->add_control( 'cta_btn_link', array(
+		'label' => 'رابط زر CTA',
+		'section' => 'hajzatik_cta_section',
+		'type' => 'url',
+	) );
+
+	$wp_customize->add_setting( 'cta_bg_image' );
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'cta_bg_image', array(
+		'label'    => 'صورة خلفية CTA',
+		'section'  => 'hajzatik_cta_section',
+		'settings' => 'cta_bg_image',
+	) ) );
 
 	// Form & Integration Section
 	$wp_customize->add_section( 'hajzatik_integration_section', array(
