@@ -262,22 +262,22 @@ get_header();
 
             <div class="contact-card" data-aos="fade-up">
                 <div class="contact-form-area">
-                    <form action="#" class="order-form">
+                    <form id="bookingForm" class="order-form">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="fullName">الاسم بالكامل:</label>
-                                <input type="text" id="fullName" placeholder="الاسم ثلاثي" class="form-control" required>
+                                <input type="text" id="fullName" name="fullName" placeholder="الاسم ثلاثي" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="phoneNumber">رقم الجوال:</label>
-                                <input type="tel" id="phoneNumber" placeholder="مثال: 05xxxxxxxxx" class="form-control" required>
+                                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="مثال: 05xxxxxxxxx" class="form-control" required>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="serviceType">نوع الخدمة المطلوبة:</label>
                             <div class="select-wrapper">
-                                <select id="serviceType" class="form-control select-control" required>
+                                <select id="serviceType" name="serviceType" class="form-control select-control" required>
                                     <option value="" disabled selected>اختر الخدمة...</option>
                                     <option value="medical">موعد طبي (مستشفى/عيادة)</option>
                                     <option value="events">تذاكر فعاليات أو مباريات</option>
@@ -292,13 +292,15 @@ get_header();
 
                         <div class="form-group">
                             <label for="orderDetails">تفاصيل الطلب (إن وجد):</label>
-                            <textarea id="orderDetails" rows="4" placeholder="اكتب تفاصيل الحجز أو الموعد المطلوب" class="form-control"></textarea>
+                            <textarea id="orderDetails" name="orderDetails" rows="4" placeholder="اكتب تفاصيل الحجز أو الموعد المطلوب" class="form-control"></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-dark btn-full btn-pill book-now-btn submit-btn">
                             إرسال الطلب
                             <span class="arrow-circle"><i class="fa-solid fa-arrow-left"></i></span>
                         </button>
+                        
+                        <div id="formMessage" style="margin-top:15px; font-weight:600; font-size:15px; text-align:center; display:none; padding:10px; border-radius:5px;"></div>
                     </form>
                 </div>
 

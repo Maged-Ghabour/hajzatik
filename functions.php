@@ -138,6 +138,54 @@ function hajzatik_scripts() {
                     }
                 });
             }
+
+            // AJAX Form Submission
+            const bookingForm = document.getElementById('bookingForm');
+            const formMessage = document.getElementById('formMessage');
+            if (bookingForm) {
+                bookingForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const submitBtn = bookingForm.querySelector('.submit-btn');
+                    const originalBtnText = submitBtn.innerHTML;
+                    submitBtn.innerHTML = 'جاري الإرسال... <span class=\"arrow-circle\"><i class=\"fa-solid fa-spinner fa-spin\"></i></span>';
+                    submitBtn.disabled = true;
+                    formMessage.style.display = 'none';
+
+                    const formData = new FormData(bookingForm);
+                    formData.append('action', 'submit_booking');
+
+                    fetch(hajzatik_ajax.ajax_url, {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        submitBtn.innerHTML = originalBtnText;
+                        submitBtn.disabled = false;
+                        
+                        formMessage.style.display = 'block';
+                        if(data.success) {
+                            formMessage.style.backgroundColor = '#d4edda';
+                            formMessage.style.color = '#155724';
+                            formMessage.innerText = data.data.message;
+                            bookingForm.reset();
+                        } else {
+                            formMessage.style.backgroundColor = '#f8d7da';
+                            formMessage.style.color = '#721c24';
+                            formMessage.innerText = data.data.message || 'حدث خطأ. حاول مرة أخرى.';
+                        }
+                    })
+                    .catch(error => {
+                        submitBtn.innerHTML = originalBtnText;
+                        submitBtn.disabled = false;
+                        formMessage.style.display = 'block';
+                        formMessage.style.backgroundColor = '#f8d7da';
+                        formMessage.style.color = '#721c24';
+                        formMessage.innerText = 'حدث خطأ في الاتصال بالخادم.';
+                    });
+                });
+            }
         });
 
         // Preloader
