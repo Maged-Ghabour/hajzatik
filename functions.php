@@ -517,6 +517,10 @@ function hajzatik_client_admin_menu() {
         
         // Remove ACF or other plugin menus if they exist, to ensure "ONLY" requested items appear
         remove_menu_page( 'edit.php?post_type=acf-field-group' ); 
+        
+        // Remove Hostinger or other hosting menus
+        remove_menu_page( 'hostinger' );
+        remove_menu_page( 'toplevel_page_hostinger' );
     }
 }
 add_action( 'admin_menu', 'hajzatik_client_admin_menu', 999 );
@@ -550,14 +554,112 @@ function hajzatik_custom_admin_css() {
         #wpadminbar {
             background-color: #1a1a1a !important;
         }
+        /* Hide WordPress Logo in Admin Bar */
+        #wp-admin-bar-wp-logo {
+            display: none !important;
+        }
+        /* Theme the Admin Menu Sidebar */
+        #adminmenuback, #adminmenuwrap, #adminmenu {
+            background-color: #121212 !important;
+        }
+        #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu, 
+        #adminmenu li.current a.menu-top, 
+        .folded #adminmenu li.wp-has-current-submenu, 
+        .folded #adminmenu li.current.menu-top {
+            background-color: #212121 !important;
+            color: #fff !important;
+        }
+        #adminmenu .wp-submenu, #adminmenu .wp-has-current-submenu .wp-submenu, #adminmenu .wp-has-current-submenu.opensub .wp-submenu, .folded #adminmenu .wp-has-current-submenu .wp-submenu, #adminmenu a.wp-has-current-submenu:focus+.wp-submenu {
+            background-color: #1a1a1a !important;
+        }
+        #adminmenu a {
+            color: #e2e8f0 !important;
+        }
+        #adminmenu a:hover, #adminmenu li.menu-top:hover, #adminmenu li.opensub>a.menu-top, #adminmenu li>a.menu-top:focus {
+            color: #fff !important;
+            background-color: #1a1a1a !important;
+        }
+        /* Widget Styling */
         .postbox {
             border-radius: 8px;
             box-shadow: 0 2px 15px rgba(0,0,0,0.03);
             border: none;
         }
+        .postbox-header {
+            border-bottom: 1px solid #f1f1f1 !important;
+        }
     </style>';
 }
 add_action( 'admin_head', 'hajzatik_custom_admin_css' );
+
+/**
+ * Remove Default Dashboard Widgets & Add Custom Analytics
+ */
+function hajzatik_custom_dashboard_widgets() {
+    global $wp_meta_boxes;
+    
+    // Remove Default Widgets
+    unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity']);
+    unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
+    unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments']);
+    unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
+    unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
+    unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
+    unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
+    unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
+    unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_recent_drafts']);
+    
+    // Add Custom Widget
+    wp_add_dashboard_widget(
+        'hajzatik_custom_analytics_widget',
+        'إحصائيات النظام السريعة',
+        'hajzatik_render_analytics_widget'
+    );
+}
+add_action( 'wp_dashboard_setup', 'hajzatik_custom_dashboard_widgets', 999 );
+
+function hajzatik_render_analytics_widget() {
+    $booking_count = wp_count_posts('booking')->publish;
+    $service_count = wp_count_posts('service')->publish;
+    $feature_count = wp_count_posts('feature')->publish;
+    $testimonial_count = wp_count_posts('testimonial')->publish;
+    
+    echo '<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; text-align: center;">';
+    
+    echo '<div style="background: #f8f9fa; padding: 20px; border-radius: 8px;">';
+    echo '<i class="fa-solid fa-calendar-check" style="font-size: 24px; color: #212121; margin-bottom: 10px; display: block;"></i>';
+    echo '<h3 style="margin: 0; font-size: 22px;">' . esc_html($booking_count) . '</h3>';
+    echo '<p style="margin: 5px 0 0; color: #666;">طلبات الحجز</p>';
+    echo '</div>';
+    
+    echo '<div style="background: #f8f9fa; padding: 20px; border-radius: 8px;">';
+    echo '<i class="fa-solid fa-briefcase" style="font-size: 24px; color: #212121; margin-bottom: 10px; display: block;"></i>';
+    echo '<h3 style="margin: 0; font-size: 22px;">' . esc_html($service_count) . '</h3>';
+    echo '<p style="margin: 5px 0 0; color: #666;">الخدمات</p>';
+    echo '</div>';
+    
+    echo '<div style="background: #f8f9fa; padding: 20px; border-radius: 8px;">';
+    echo '<i class="fa-solid fa-star" style="font-size: 24px; color: #212121; margin-bottom: 10px; display: block;"></i>';
+    echo '<h3 style="margin: 0; font-size: 22px;">' . esc_html($feature_count) . '</h3>';
+    echo '<p style="margin: 5px 0 0; color: #666;">المميزات</p>';
+    echo '</div>';
+    
+    echo '<div style="background: #f8f9fa; padding: 20px; border-radius: 8px;">';
+    echo '<i class="fa-solid fa-comments" style="font-size: 24px; color: #212121; margin-bottom: 10px; display: block;"></i>';
+    echo '<h3 style="margin: 0; font-size: 22px;">' . esc_html($testimonial_count) . '</h3>';
+    echo '<p style="margin: 5px 0 0; color: #666;">آراء العملاء</p>';
+    echo '</div>';
+    
+    echo '</div>';
+}
+
+/**
+ * Change Footer Text in Admin
+ */
+function hajzatik_custom_admin_footer() {
+    return 'تم التطوير بواسطة نظام الإدارة المخصص &copy; ' . date('Y');
+}
+add_filter( 'admin_footer_text', 'hajzatik_custom_admin_footer' );
 
 /**
  * Custom Login Page Styling
