@@ -6,15 +6,11 @@ get_header();
 ?>
 
     <!-- Blog Banner -->
-    <section class="cta-banner" style="min-height: 250px; align-items: center; display: flex;">
-        <div class="container">
-            <div class="cta-content" style="min-height: 250px; background-image: url('<?php echo get_template_directory_uri(); ?>/assets/cta_banner.png');">
-                <div class="cta-overlay" style="display: block;"></div>
-                <div class="cta-text-box" style="text-align: center; margin: 0 auto; max-width: 800px;">
-                    <h1 class="cta-title" style="margin-bottom: 0;">المدونة</h1>
-                    <p class="cta-description">أحدث الأخبار والمقالات</p>
-                </div>
-            </div>
+    <section class="page-header-banner" style="position: relative; min-height: 300px; display: flex; align-items: center; justify-content: center; background-image: url('<?php echo get_template_directory_uri(); ?>/assets/cta_banner.png'); background-size: cover; background-position: center; margin-bottom: 60px;">
+        <div class="cta-overlay" style="display: block; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 1;"></div>
+        <div class="container" style="position: relative; z-index: 2; text-align: center;">
+            <h1 class="cta-title" style="color: #fff; margin-bottom: 0; font-size: 36px;">المدونة</h1>
+            <p class="cta-description" style="color: #ccc; margin-top: 15px; font-size: 18px;">أحدث الأخبار والمقالات</p>
         </div>
     </section>
 
