@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حجوزاتك - Hajzatik</title>
+    
+    <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container header-container">
+            <!-- Mobile Menu Toggle -->
+            <button class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <img src="assets/logo.png" alt="Hajzatik Logo">
+            </a>
+
+            <!-- Navigation -->
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="#" class="active">الرئيسية</a></li>
+                    <li><a href="#">من نحن</a></li>
+                    <li><a href="#">تواصل معنا</a></li>
+                    <li><a href="#">المدونة</a></li>
+                </ul>
+            </nav>
+
+            <!-- Contact Info & CTA -->
+            <div class="header-contact">
+                <div class="phone-number">
+                    <span dir="ltr">+974 123 456 789</span>
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+                <a href="#" class="btn btn-dark">تواصل معنا</a>
+            </div>
+        </div>
+
+        <!-- Mobile Sidebar Menu -->
+        <div class="mobile-menu-overlay"></div>
+        <div class="mobile-menu">
+            <div class="mobile-menu-header">
+                <img src="assets/logo.png" alt="Hajzatik Logo" class="mobile-logo">
+                <button class="menu-close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <ul class="mobile-nav-list">
+                <li><a href="#" class="active">الرئيسية</a></li>
+                <li><a href="#">من نحن</a></li>
+                <li><a href="#">تواصل معنا</a></li>
+                <li><a href="#">المدونة</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-overlay"></div>
+                <div class="hero-text-box">
+                    <h1 class="hero-title">احصل على موعدك أو<br>حجزك بسرعة أكبر</h1>
+                    <p class="hero-description">
+                        نوفر لك المساعدة في الوصول إلى المواعيد والحجوزات<br>
+                        المطلوبة في المستشفيات والفعاليات والمطاعم والسفر<br>
+                        وغيرها — بسرعة، وبدون عناء البحث الطويل.
+                    </p>
+                    <a href="#" class="btn btn-white btn-whatsapp">
+                        ابدأ عبر واتساب
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" data-aos="fade-up" data-aos-delay="200">
+        <div class="container">
+            <div class="features-box">
+                <!-- Feature 1 -->
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <img src="assets/icon1.png" alt="مواعيد أسرع">
+                    </div>
+                    <div class="feature-text">
+                        <h3>مواعيد أسرع</h3>
+                        <p>نساعدك في الوصول إلى المواعيد<br>والحجوزات المطلوبة بأسرع وقت ممكن</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <img src="assets/icon2.png" alt="متابعة عبر واتساب">
+                    </div>
+                    <div class="feature-text">
+                        <h3>متابعة عبر واتساب</h3>
+                        <p>فريق جاهز للتواصل والمتابعة حتى اكتمال<br>طلبك</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <img src="assets/icon3.png" alt="بدون بحث طويل">
+                    </div>
+                    <div class="feature-text">
+                        <h3>بدون بحث طويل</h3>
+                        <p>بدلاً من البحث والمقارنة، اختر الخدمة واترك<br>المهمة علينا</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">خدماتنا</span>
+                <h2>كل ما تحتاجه في مكان واحد</h2>
+                <p>حلول حجز متنوعة تناسب احتياجاتك اليومية</p>
+            </div>
+
+            <div class="services-grid" data-aos="fade-up">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="assets/service1.png" alt="المواعيد الطبية">
+                    </div>
+                    <div class="service-content">
+                        <h3>المواعيد الطبية</h3>
+                        <p>حجز المستشفيات الخاصة والمراكز الصحية ذات الضغط العالي</p>
+                        <a href="#" class="btn btn-dark btn-full btn-pill book-now-btn">
+                            احجز الآن <span class="arrow-circle"><i class="fa-solid fa-arrow-left"></i></span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="assets/service2.png" alt="الفعاليات والمناسبات">
+                    </div>
+                    <div class="service-content">
+                        <h3>الفعاليات والمناسبات</h3>
+                        <p>حجوزات الفعاليات الرياضية والترفيهية حسب التوفر</p>
+                        <a href="#" class="btn btn-dark btn-full btn-pill book-now-btn">
+                            احجز الآن <span class="arrow-circle"><i class="fa-solid fa-arrow-left"></i></span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="assets/service3.png" alt="السفر والطيران">
+                    </div>
+                    <div class="service-content">
+                        <h3>السفر والطيران</h3>
+                        <p>حجوزات وتذاكر السفر وفق احتياجك</p>
+                        <a href="#" class="btn btn-dark btn-full btn-pill book-now-btn">
+                            احجز الآن <span class="arrow-circle"><i class="fa-solid fa-arrow-left"></i></span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="assets/service4.png" alt="المطاعم">
+                    </div>
+                    <div class="service-content">
+                        <h3>المطاعم</h3>
+                        <p>حجوزات المطاعم والمواقع المميزة</p>
+                        <a href="#" class="btn btn-dark btn-full btn-pill book-now-btn">
+                            احجز الآن <span class="arrow-circle"><i class="fa-solid fa-arrow-left"></i></span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="assets/service5.png" alt="السيارات">
+                    </div>
+                    <div class="service-content">
+                        <h3>السيارات</h3>
+                        <p>حجز مواعيد الصيانة والخدمات الدورية للسيارات</p>
+                        <a href="#" class="btn btn-dark btn-full btn-pill book-now-btn">
+                            احجز الآن <span class="arrow-circle"><i class="fa-solid fa-arrow-left"></i></span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="assets/service6.png" alt="الخدمات الخاصة">
+                    </div>
+                    <div class="service-content">
+                        <h3>الخدمات الخاصة</h3>
+                        <p>تنسيق ومتابعة الطلبات الخاصة حسب الحاجة</p>
+                        <a href="#" class="btn btn-dark btn-full btn-pill book-now-btn">
+                            احجز الآن <span class="arrow-circle"><i class="fa-solid fa-arrow-left"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner Section -->
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-overlay"></div>
+                <div class="cta-text-box">
+                    <h2 class="cta-title">نوفر لك الوصول السريع إلى<br>أهم المواعيد والحجوزات</h2>
+                    <p class="cta-description">
+                        من المواعيد الطبية والحكومية إلى الفعاليات والمطاعم وتذاكر<br>
+                        السفر، نساعدك في الحصول على الحجز الذي تحتاجه بأسرع وقت
+                    </p>
+                    <a href="#" class="btn btn-white btn-whatsapp cta-btn">
+                        احجز عبر واتساب
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">آلية العمل</span>
+                <h2>خطوات بسيطة ونتائج سريعة</h2>
+                <p>من طلبك الأول حتى تأكيد الحجز</p>
+            </div>
+
+            <div class="steps-grid" data-aos="fade-up">
+                <!-- Step 1 -->
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h3>أرسل طلبك</h3>
+                    <p>أخبرنا بنوع الحجز أو الموعد الذي تحتاجه</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-card active">
+                    <div class="step-number">02</div>
+                    <h3>نبحث عن أفضل خيار متاح</h3>
+                    <p>نراجع التوفر ونساعدك في الوصول إلى أقرب خيار مناسب</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h3>نؤكد الحجز ونتابع معك</h3>
+                    <p>نتابع العملية حتى اكتمال الحجز وإرسال التفاصيل لك</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">آراء العملاء</span>
+                <h2>تجارب حقيقية تتحدث عنّا</h2>
+                <p>ثقة عملائنا هي مصدر نجاحنا</p>
+            </div>
+
+            <div class="swiper testimonials-swiper" data-aos="zoom-in">
+                <div class="swiper-wrapper">
+                    <!-- Testimonial 1 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="user-info-box">
+                                    <img src="assets/avatar.png" alt="خالد العتيبي" class="user-avatar">
+                                    <div class="user-details">
+                                        <h4>خالد العتيبي</h4>
+                                        <span>موعد طبي</span>
+                                    </div>
+                                </div>
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                            <hr class="testimonial-divider">
+                            <p class="testimonial-text">
+                                كنت أبحث عن موعد سريع مع استشاري مشهور وكانت المواعيد بعيدة جداً. تواصلت مع Hajzatik وتمت مساعدتي في الحصول على موعد مناسب خلال وقت قصير. الخدمة كانت احترافية والمتابعة ممتازة.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="user-info-box">
+                                    <img src="assets/avatar.png" alt="سارة أحمد" class="user-avatar">
+                                    <div class="user-details">
+                                        <h4>سارة أحمد</h4>
+                                        <span>حجوزات طيران</span>
+                                    </div>
+                                </div>
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                            <hr class="testimonial-divider">
+                            <p class="testimonial-text">
+                                تطبيق ممتاز! ساعدوني في حجز رحلة طيران بسعر ممتاز وفي وقت قياسي جداً بعد أن فقدت الأمل في إيجاد حجوزات متاحة. شكراً لفريق الدعم على سرعة الاستجابة.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="user-info-box">
+                                    <img src="assets/avatar.png" alt="فيصل عبدالرحمن" class="user-avatar">
+                                    <div class="user-details">
+                                        <h4>فيصل عبدالرحمن</h4>
+                                        <span>تذاكر فعاليات</span>
+                                    </div>
+                                </div>
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                            <hr class="testimonial-divider">
+                            <p class="testimonial-text">
+                                واجهت صعوبة في الحصول على تذاكر لإحدى الفعاليات الكبرى بسبب نفاذها السريع، ولكن فريق حجوزاتك وفرها لي بكل سهولة. أنصح بالتعامل معهم بشدة لسرعتهم وموثوقيتهم.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 4 (Extra for swiping) -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="user-info-box">
+                                    <img src="assets/avatar.png" alt="عبدالله الدوسري" class="user-avatar">
+                                    <div class="user-details">
+                                        <h4>عبدالله الدوسري</h4>
+                                        <span>حجز مطعم</span>
+                                    </div>
+                                </div>
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                            <hr class="testimonial-divider">
+                            <p class="testimonial-text">
+                                أردت حجز طاولة في أحد المطاعم المزدحمة لمناسبة خاصة، وبفضل فريق حجوزاتك تم تأكيد الحجز في أقل من ساعة. تجربة رائعة ومريحة جداً!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slider Controls -->
+            <div class="slider-controls">
+                <button class="slider-btn prev-btn swiper-button-next-custom">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <button class="slider-btn next-btn swiper-button-prev-custom">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">الأسئلة الشائعة</span>
+                <h2>كل ما تريد معرفته</h2>
+                <p>إجابات سريعة على أبرز استفساراتك</p>
+            </div>
+
+            <div class="faq-grid" data-aos="fade-up">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>كيف يمكنني تقديم طلب حجز؟</h3>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>يمكنك بسهولة تقديم طلبك عبر تعبئة النموذج الموجود في صفحة "اطلب خدمتك"، أو من خلال التواصل معنا مباشرة عبر زر الواتساب وسيقوم فريقنا بمتابعة طلبك فوراً.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>ما هي أنواع الحجوزات التي توفرونها؟</h3>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نغطي مجموعة واسعة من الخدمات تشمل المواعيد الطبية في المستشفيات، تذاكر الطيران والفنادق، حجوزات المطاعم الكبرى، وتذاكر الفعاليات والمناسبات الترفيهية.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>هل هناك رسوم إضافية على الخدمة؟</h3>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، نتقاضى رسوماً رمزية مقابل خدمة التنسيق والمتابعة السريعة نيابة عنك. يتم توضيح جميع الرسوم بشكل شفاف قبل تأكيد الحجز لضمان رضاك التام.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>كم يستغرق تأكيد الحجز؟</h3>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>يعتمد وقت التأكيد على نوع الخدمة ومدى توفرها، ولكننا نتميز بسرعة الاستجابة. في العادة يتم إنجاز وتأكيد معظم الطلبات خلال ساعات قليلة من استلام الطلب.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 5 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>ماذا لو أردت إلغاء أو تعديل حجزي؟</h3>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>يمكنك تعديل أو إلغاء حجزك من خلال التواصل مع خدمة العملاء لدينا عبر الواتساب. يخضع الإلغاء لسياسات مزود الخدمة الأصلي وسنقوم بمساعدتك في كافة الإجراءات.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 6 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>هل بياناتي الشخصية آمنة؟</h3>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>بكل تأكيد. نحن نولي خصوصية عملائنا أهمية قصوى، ونستخدم أحدث الأنظمة لضمان سرية معلوماتك الشخصية وعدم مشاركتها مع أي جهة غير مصرح لها.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">اطلب خدمتك</span>
+                <h2>نحن هنا لتوفير وقتك</h2>
+                <p>شاركنا تفاصيل طلبك وسنتولى متابعة إجراءات الحجز نيابة عنك</p>
+            </div>
+
+            <div class="contact-card" data-aos="fade-up">
+                <!-- Form Area -->
+                <div class="contact-form-area">
+                    <form action="#" class="order-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">الاسم:</label>
+                                <input type="text" id="firstName" placeholder="محمد أحمد" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="phoneNumber">رقم الجوال:</label>
+                                <input type="tel" id="phoneNumber" placeholder="+095 123 4567" dir="ltr" style="text-align: right;" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="serviceType">اختر نوع الخدمة:</label>
+                                <div class="select-wrapper">
+                                    <select id="serviceType" class="form-control">
+                                        <option value="" disabled selected>موعد طبي</option>
+                                        <option value="medical">موعد طبي</option>
+                                        <option value="travel">سفر وطيران</option>
+                                        <option value="events">فعاليات</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down select-icon"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="citySelect">في أي مدينة ترغب بالحجز؟</label>
+                                <div class="select-wrapper">
+                                    <select id="citySelect" class="form-control">
+                                        <option value="" disabled selected>المدينة</option>
+                                        <option value="riyadh">الرياض</option>
+                                        <option value="jeddah">جدة</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down select-icon"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="orderDetails">تفاصيل الطلب (إن وجد):</label>
+                            <textarea id="orderDetails" rows="4" placeholder="اكتب تفاصيل الحجز أو الموعد المطلوب" class="form-control"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-dark btn-full btn-pill book-now-btn submit-btn">
+                            إرسال الطلب
+                            <span class="arrow-circle"><i class="fa-solid fa-arrow-left"></i></span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Image Area -->
+                <div class="contact-image-area">
+                    <img src="assets/contact_us.png" alt="تواصل معنا">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <!-- Column 1: Logo -->
+                <div class="footer-col logo-col">
+                    <img src="assets/logoFooter.png" alt="Hajzatik Logo" class="footer-logo">
+                    <p class="footer-description">منصتك الأولى الموثوقة لتسهيل وتأمين حجوزاتك ومواعيدك بضغطة زر وبأسرع وقت ممكن.</p>
+                </div>
+
+                <!-- Column 2: Links -->
+                <div class="footer-col links-col">
+                    <h4 class="footer-title">المزيد عنا</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">من نحن</a></li>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">الشروط والأحكام</a></li>
+                        <li><a href="#">تواصل معنا</a></li>
+                        <li><a href="#">المدونة</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact Info -->
+                <div class="footer-col contact-col">
+                    <h4 class="footer-title">تواصل معنا</h4>
+                    <ul class="footer-contact-info">
+                        <li>
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span dir="ltr">+095 123 4567</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <span dir="ltr">+095 123 4567</span>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>example@hotmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Socials -->
+                <div class="footer-col social-col">
+                    <h4 class="footer-title">تابعنا على وسائل التواصل</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; جميع الحقوق المحفوظة 2026</p>
+                <p>الرقم الضريبي : 123456789</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script for mobile menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menuClose = document.querySelector('.menu-close');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+
+            function toggleMenu() {
+                mobileMenu.classList.toggle('active');
+                mobileOverlay.classList.toggle('active');
+            }
+
+            menuToggle.addEventListener('click', toggleMenu);
+            menuClose.addEventListener('click', toggleMenu);
+            mobileOverlay.addEventListener('click', toggleMenu);
+
+            // FAQ Accordion
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other active items if you only want one open at a time
+                    faqItems.forEach(i => {
+                        if (i !== item) i.classList.remove('active');
+                    });
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Initialize Swiper
+            const swiper = new Swiper('.testimonials-swiper', {
+                direction: 'horizontal',
+                slidesPerView: 1,
+                spaceBetween: 20,
+                // Optional parameters
+                loop: true,
+                navigation: {
+                    nextEl: '.swiper-button-next-custom',
+                    prevEl: '.swiper-button-prev-custom',
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 30,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                }
+            });
+        });
+    </script>
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 100,
+            });
+        });
+    </script>
+</body>
+</html>
